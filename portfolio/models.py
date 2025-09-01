@@ -1,4 +1,3 @@
-
 from django.db import models
 
 class Tag(models.Model):
@@ -24,13 +23,13 @@ class Project(models.Model):
     def __str__(self): return self.title
 
 class ProjectLink(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="links")
+    project = models.ForeignKey(Project, related_name="links", on_delete=models.CASCADE)
     label = models.CharField(max_length=50)
     url = models.URLField(max_length=300)
     class Meta:
-        unique_together = ("project", "label")
         ordering = ["label"]
-    def __str__(self): return f"{self.project}: {self.label}"
+        unique_together = (("project", "label"),)
+    def __str__(self): return f"{self.project} :: {self.label}"
 
 class Experience(models.Model):
     company = models.CharField(max_length=120)
