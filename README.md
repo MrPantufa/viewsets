@@ -1,10 +1,16 @@
+# EBAC Fix Bundle
 
-# Portfolio ViewSets Project (Django + DRF)
+Este pacote contém:
+- `ebac_final_check.py` — verificador completo (migrate, check, tests, endpoints e E2E).
+- `run-quick.ps1` — wrapper simples para Windows PowerShell.
+- `portfolio/models.py` e `portfolio/serializers.py` corrigidos (sem `...`).
+- `portfolio/views` modularizado (por domínio).
+- `pyproject.toml` para Poetry.
 
-## Como usar
-1. Crie e ative um venv (opcional).
-2. Instale dependências: `pip install -r requirements.txt`
-3. Migre: `python manage.py migrate`
-4. Rode os testes (modelos/serializers + API): `python manage.py test portfolio -v 2`
-5. Suba o servidor (opcional): `python manage.py runserver`
-Rotas de API: `/api/` via DRF router (tags, technologies, projects, project-links, experiences, educations).
+## Uso
+1. Extraia os arquivos sobre o seu projeto (na raiz onde está `manage.py`).
+2. Execute:
+   ```powershell
+   python ebac_final_check.py
+   ```
+3. Corrija qualquer item que o script reporte.

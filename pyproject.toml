@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "portfolio-ebac"
+version = "0.1.0"
+description = "DRF + ViewSets + Tests (EBAC)"
+authors = ["Seu Nome <email@example.com>"]
+readme = "README.md"
+packages = [{ include = "portfolio" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = ">=5.0.6"
+djangorestframework = ">=3.15.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8"
+pytest-django = "^4.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
